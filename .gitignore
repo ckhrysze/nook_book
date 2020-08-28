@@ -35,3 +35,11 @@ npm-debug.log
 
 .elixir_ls/
 mnesia/
+
+# terraform
+.terraform
+terraform.tfstate
+terraform.tfvars
+*.tfstate*
+terraform-provider*v*
+current.plan
