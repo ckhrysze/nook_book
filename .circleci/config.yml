@@ -4,22 +4,22 @@ jobs:
     docker:
       - image: ckhrysze/elixir_for_amazonlinux2
 
-      environment:
-        MIX_ENV: prod
+    environment:
+      MIX_ENV: prod
 
-      working_directory: ~/repo
-      steps:
-        - checkout
+    working_directory: ~/repo
+    steps:
+      - checkout
 
-        - run: mix local.hex --force
-        - run: mix local.rebar
-        - run: mix deps.get
-        - run: mix compile
-        - run: npm install --prefix ./assets
-        - run: npm run deploy --prefix ./assets
-        - run: mix phx.digest
-        - run: mix release
-        - run: cp _build/prod/nook_book-0.1.0.tar.gz nookbook.tgz
+      - run: mix local.hex --force
+      - run: mix local.rebar
+      - run: mix deps.get
+      - run: mix compile
+      - run: npm install --prefix ./assets
+      - run: npm run deploy --prefix ./assets
+      - run: mix phx.digest
+      - run: mix release
+      - run: cp _build/prod/nook_book-0.1.0.tar.gz nookbook.tgz
 
-        - store_artifacts:
-            path: nookbook.tgz
+      - store_artifacts:
+          path: nookbook.tgz
