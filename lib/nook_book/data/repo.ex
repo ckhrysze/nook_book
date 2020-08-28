@@ -23,7 +23,7 @@ defmodule NookBook.Data.Repo do
 
   def filter(table, pattern) do
     :mnesia.transaction(fn ->
-      :mnesia.match_object(table, :mnesia.table_info(table, pattern), :read)
+      :mnesia.match_object(table, pattern, :read)
     end)
   end
 end
