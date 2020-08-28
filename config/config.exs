@@ -22,6 +22,8 @@ config :logger, :console,
 
 config :mnesia, dir: 'mnesia/data'
 
+config :nook_book, cluster_role: :primary, primary_node: :"n1@127.0.0.1"
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
